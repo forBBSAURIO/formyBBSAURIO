@@ -142,6 +142,8 @@ function abrirRegalo(elemento, index) {
 }
 
 // Pausar video cuando se hace scroll fuera de la vista (opcional)
+// COMENTADO: Para que el video no se pause al hacer scroll
+/*
 window.addEventListener('scroll', function() {
     const video = document.getElementById('video-cumpleanos');
     if (video && !isElementInViewport(video)) {
@@ -159,3 +161,4 @@ function isElementInViewport(el) {
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
 }
+*/
