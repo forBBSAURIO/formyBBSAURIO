@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños! 🎉</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Contenedor de confeti -->
+    <div id="confetti-container"></div>
+
+    <!-- Pantalla de inicio con contraseña -->
+    <div id="login-screen">
+        <div class="login-icon">🎁</div>
+        <h1 class="login-title">Entrada Especial</h1>
+        <p class="login-subtitle">Ingresa la contraseña secreta para continuar</p>
+        
+        <input 
+            type="text" 
+            id="password-input" 
+            class="password-input" 
+            placeholder="Contraseña..."
+            maxlength="20"
+        >
+        
+        <div class="error-message" id="error-message">
+            ¡Contraseña incorrecta! 🙈
+        </div>
+        
+        <button class="login-button" onclick="verificarPassword()">
+            🔓 Entrar
+        </button>
+    </div>
+
+    <!-- Contenedor principal (oculto inicialmente) -->
+    <div class="container hidden" id="main-content">
+        <h1 class="titulo-principal">💕¡FELIZ CUMPLEAÑOS!💕</h1>
+        
+        <div class="cake-section" onclick="soplarVelas()">
+            <div class="cake" id="cake">🎂</div>
+            <p style="color: #8b4566; font-size: 0.9em; margin-top: 10px;">
+                ¡Haz clic en el pastel para soplar las velas! 🌬️
+            </p>
+        </div>
+        
+        <div class="name">¡BBSAURIO!</div>
+        
+        <div class="balloons">
+            <span class="balloon" onclick="explotarGlobo(this)">🎈</span>
+            <span class="balloon" onclick="explotarGlobo(this)">🎈</span>
+            <span class="balloon" onclick="explotarGlobo(this)">🎈</span>
+        </div>
+        <p style="color: #8b4566; font-size: 0.85em; margin-top: 5px;">
+            Haz clic en los globos 🎈
+        </p>
+        
+        <div class="message-card">
+            <div class="message">
+                Hola bb, antes que nada feliz pumpe, esto es solo una introducción jeje. 
+                En mi cumple me hiciste muy pero muy feliz, nadie me habia echó una presentación
+                jaja, y pues queria sorpenderte vez, no son competencias ni nada, simplemete queria
+                al nivel jaja. 
+                Espero que este nuevo año de vida esté lleno de 
+                alegría, amor y muchas, muchas, pero muchas más patoaventuras increíbles.
+                Te adoro millones, pero bueno, empecemos.
+            </div>
+        </div>
+        
+        <button class="button" onclick="mostrarDeseos()">
+            🎁 Abrir mis deseos para ti
+        </button>
+        
+        <div id="deseos" class="wishes hidden">
+            <div class="section-header">
+                <h3>💝 Mis mejores deseos para ti:</h3>
+                <p style="color: #8b4566; font-size: 0.95em; margin-top: 10px;">Haz clic en cada regalo para descubrir tu deseo 🎁</p>
+            </div>
+            <div class="wishes-list">
+                <div class="gift-box" onclick="abrirRegalo(this, 0)">
+                    <div class="gift-wrap">
+                        <div class="gift-emoji">🎁</div>
+                        <div class="gift-ribbon">🎀</div>
+                    </div>
+                    <div class="gift-content hidden">
+                        <div class="wish-icon">🌟</div>
+                        <p>Qué todos tus sueños se hagan realidad y qué cada meta que 
+                            te propongas la alcances con éxito, pero siempre 
+                            disfrutando lo bueno y lo malo.</p>
+                    </div>
+                </div>
+
+                <div class="gift-box" onclick="abrirRegalo(this, 1)">
+                    <div class="gift-wrap">
+                        <div class="gift-emoji">🎁</div>
+                        <div class="gift-ribbon">🎀</div>
+                    </div>
+                    <div class="gift-content hidden">
+                        <div class="wish-icon">💪</div>
+                        <p>Qué tengas la fuerza y valentía para superar 
+                            cualquier obstáculo que se presente en tu camino, 
+                            recuerda qué eres una loba.</p>
+                    </div>
+                </div>
+
+                <div class="gift-box" onclick="abrirRegalo(this, 2)">
+                    <div class="gift-wrap">
+                        <div class="gift-emoji">🎁</div>
+                        <div class="gift-ribbon">🎀</div>
+                    </div>
+                    <div class="gift-content hidden">
+                        <div class="wish-icon">😊</div>
+                        <p>Qué la felicidad te acompañe cada día 
+                            y que encuentres razones para sonreír en cada 
+                            momento de la vida, porqué solo hay una.</p>
+                    </div>
+                </div>
+
+                <div class="gift-box" onclick="abrirRegalo(this, 3)">
+                    <div class="gift-wrap">
+                        <div class="gift-emoji">🎁</div>
+                        <div class="gift-ribbon">🎀</div>
+                    </div>
+                    <div class="gift-content hidden">
+                        <div class="wish-icon">❤️</div>
+                        <p>Qué el amor y la amistad verdadera siempre estén presentes en tu vida, el noviazgo
+                            no es necesario, pero tu date, yo estare para regañarte siempre jajaja, siempre 
+                            te acompañare en esos pedillos del amor.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="gift-box" onclick="abrirRegalo(this, 4)">
+                    <div class="gift-wrap">
+                        <div class="gift-emoji">🎁</div>
+                        <div class="gift-ribbon">🎀</div>
+                    </div>
+                    <div class="gift-content hidden">
+                        <div class="wish-icon">🎉</div>
+                        <p>Qué celebres cada momento como si fuera único, 
+                            porque cada día es especial, y cada uno trae sus patoaventuras</p>
+                    </div>
+                </div>
+            </div>
+            <div class="wish-final">
+                <p> Muchas muchas felicidades bb, si no mal recuerdo nos conocimos y a  
+                    los pocos dias era tu cumple, nememes bb, qué alegria qué ya pasado los años 
+                    aca andemos, yo se que fue cagada la manera en la que nos conocimos, y siempre 
+                    estara esa anecdota para reirnos, pero pues, toda historia interesante 
+                    empieza cabron JAJAJAJA. Te amo millones ya lo sabes, y siempre podras conmigo
+                    ya llegara el dia qué nos veamos en persona, pero mientras, nuestra amistad 
+                    sera de las más hermosas, yo se que ultimamente no hablamos muchote, pero eso 
+                    es lo de menos, cada quien tiene su vida, al final del dia somos hermanitos, 
+                    no de sangre, pero la hermandad esta, te deseo lo mejor del mundo 
+                    qué diosito te acompañe hoy y siempre a tu familia y a los que te rodean, 
+                    la vida es hermosa, asi que hay que vivir felices, como todo tiene sus 
+                    bajas, pero si no fuera así, no tendria sentido vivir, TE AMO MILLONES 
+                    qué tengas de los mejores dias hoy y siempre bb, te adoro, besooooos, 
+                    espero este detallito te guste, besooooooos 💕✨</p>
+            </div>
+        </div>
+
+        <button class="button" onclick="mostrarVideo()" id="video-button" style="display: none;">
+            🎥 Ver video especial
+        </button>
+
+        <div id="video-section" class="video-section hidden">
+            <div class="section-header">
+                <h3>💝 Un mensaje especial para ti</h3>
+            </div>
+            <div class="video-wrapper">
+                <video id="video-cumpleanos" controls>
+                    <source src="assets/video/cumpleanos.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
